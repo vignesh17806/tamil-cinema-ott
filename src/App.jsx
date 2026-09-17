@@ -1,9 +1,45 @@
+import ajith from "./assets/ajith.jpg";
+import vijay from "./assets/vijay.jpg";
+import suriya from "./assets/suriya.jpg";
+import dhanush from "./assets/dhanush.jpg";
+import karthi from "./assets/karthi.jpg";
+import vikram from "./assets/vikram.jpg";
+
+import mankatha from "./assets/Mankatha.jpg";
+import viswasam from "./assets/viswasam.jpg";
+import vidaamuyarchi from "./assets/vidaamuyarchi.jpg";
+
+import leo from "./assets/leo.jpg";
+import master from "./assets/master.jpg";
+import beast from "./assets/beast.jpg";
+import varisu from "./assets/varisu.jpg";
+import ghilli from "./assets/ghilli.jpg";
+
+import soorarai from "./assets/soorarai.jpg";
+import jai_bhim from "./assets/jai_bhim.jpg";
+import surya24 from "./assets/surya_24.jpg";
+
+import asuran from "./assets/asuran.jpg";
+import vip from "./assets/vip.jpg";
+import raayan from "./assets/raayan.jpg";
+
+import kaithi from "./assets/kaithi.jpg";
+import theeran from "./assets/theeran.jpg";
+import ponniyinSelvan from "./assets/ponniyin_selvan.jpg";
+
+import anniyan from "./assets/anniyan.jpg";
+import deivaThirumagal from "./assets/deiva_thirumagal.jpg";
+import mahaan from "./assets/mahaan.jpg";
 
 import "./App.css";
+
+
+/* ================= ACTOR CARD ================= */
 
 function ActorCard({ image, name, movieSection }) {
   return (
     <div className="actor-card">
+
       <img src={image} alt={name} />
 
       <h3>{name}</h3>
@@ -11,10 +47,13 @@ function ActorCard({ image, name, movieSection }) {
       <a href={movieSection}>
         View Movies
       </a>
+
     </div>
   );
 }
 
+
+/* ================= MOVIE CARD ================= */
 
 function MovieCard({ image, title, year, genre }) {
   return (
@@ -30,7 +69,7 @@ function MovieCard({ image, title, year, genre }) {
           {year} • {genre}
         </p>
 
-        <button>
+        <button type="button">
           ▶ Watch
         </button>
 
@@ -41,10 +80,10 @@ function MovieCard({ image, title, year, genre }) {
 }
 
 
+/* ================= MAIN APP ================= */
+
 function App() {
-
   return (
-
     <div>
 
       {/* ================= HEADER ================= */}
@@ -121,44 +160,38 @@ function App() {
 
         <div className="actor-container">
 
-
           <ActorCard
-            image="/src/assets/ajith.jpg"
+            image={ajith}
             name="Thala Ajith"
             movieSection="#thala"
           />
 
-
           <ActorCard
-            image="/src/assets/vijay.jpg"
+            image={vijay}
             name="Thalapathy Vijay"
             movieSection="#thalapathy"
           />
 
-
           <ActorCard
-            image="/src/assets/suriya.jpg"
+            image={suriya}
             name="Suriya"
             movieSection="#suriya"
           />
 
-
           <ActorCard
-            image="/src/assets/dhanush.jpg"
+            image={dhanush}
             name="Dhanush"
             movieSection="#dhanush"
           />
 
-
           <ActorCard
-            image="/src/assets/karthi.jpg"
+            image={karthi}
             name="Karthi"
             movieSection="#karthi"
           />
 
-
           <ActorCard
-            image="/src/assets/vikram.jpg"
+            image={vikram}
             name="Chiyaan Vikram"
             movieSection="#vikram"
           />
@@ -168,7 +201,7 @@ function App() {
       </section>
 
 
-      {/* ================= THALA ================= */}
+      {/* ================= THALA AJITH ================= */}
 
       <section className="movies" id="thala">
 
@@ -177,21 +210,21 @@ function App() {
         <div className="movie-container">
 
           <MovieCard
-            image="/src/assets/mankatha.jpg"
+            image={mankatha}
             title="Mankatha"
             year="2011"
             genre="Action"
           />
 
           <MovieCard
-            image="/src/assets/viswasam.jpg"
+            image={viswasam}
             title="Viswasam"
             year="2019"
             genre="Action"
           />
 
           <MovieCard
-            image="/src/assets/vidaamuyarchi.jpg"
+            image={vidaamuyarchi}
             title="Vidaamuyarchi"
             year="2025"
             genre="Action"
@@ -202,7 +235,7 @@ function App() {
       </section>
 
 
-      {/* ================= THALAPATHY ================= */}
+      {/* ================= THALAPATHY VIJAY ================= */}
 
       <section className="movies" id="thalapathy">
 
@@ -211,35 +244,35 @@ function App() {
         <div className="movie-container">
 
           <MovieCard
-            image="/src/assets/leo.jpg"
+            image={leo}
             title="Leo"
             year="2023"
             genre="Action"
           />
 
           <MovieCard
-            image="/src/assets/master.jpg"
+            image={master}
             title="Master"
             year="2021"
             genre="Action"
           />
 
           <MovieCard
-            image="/src/assets/beast.jpg"
+            image={beast}
             title="Beast"
             year="2022"
             genre="Action"
           />
 
           <MovieCard
-            image="/src/assets/varisu.jpg"
+            image={varisu}
             title="Varisu"
             year="2023"
             genre="Drama"
           />
 
           <MovieCard
-            image="/src/assets/ghilli.jpg"
+            image={ghilli}
             title="Ghilli"
             year="2004"
             genre="Action"
@@ -259,21 +292,21 @@ function App() {
         <div className="movie-container">
 
           <MovieCard
-            image="/src/assets/soorarai.jpg"
+            image={soorarai}
             title="Soorarai Pottru"
             year="2020"
             genre="Drama"
           />
 
           <MovieCard
-            image="/src/assets/jai_bhim.jpg"
+            image={jai_bhim}
             title="Jai Bhim"
             year="2021"
             genre="Drama"
           />
 
           <MovieCard
-            image="/src/assets/surya_24.jpg"
+            image={surya24}
             title="24"
             year="2016"
             genre="Sci-Fi"
@@ -293,21 +326,21 @@ function App() {
         <div className="movie-container">
 
           <MovieCard
-            image="/src/assets/asuran.jpg"
+            image={asuran}
             title="Asuran"
             year="2019"
             genre="Drama"
           />
 
           <MovieCard
-            image="/src/assets/vip.jpg"
+            image={vip}
             title="VIP"
             year="2014"
             genre="Comedy"
           />
 
           <MovieCard
-            image="/src/assets/raayan.jpg"
+            image={raayan}
             title="Raayan"
             year="2024"
             genre="Action"
@@ -327,21 +360,21 @@ function App() {
         <div className="movie-container">
 
           <MovieCard
-            image="/src/assets/kaithi.jpg"
+            image={kaithi}
             title="Kaithi"
             year="2019"
             genre="Action"
           />
 
           <MovieCard
-            image="/src/assets/theeran.jpg"
+            image={theeran}
             title="Theeran"
             year="2017"
             genre="Action"
           />
 
           <MovieCard
-            image="/src/assets/ponniyin_selvan.jpg"
+            image={ponniyinSelvan}
             title="Ponniyin Selvan"
             year="2022"
             genre="Historical"
@@ -361,21 +394,21 @@ function App() {
         <div className="movie-container">
 
           <MovieCard
-            image="/src/assets/anniyan.jpg"
+            image={anniyan}
             title="Anniyan"
             year="2005"
             genre="Action"
           />
 
           <MovieCard
-            image="/src/assets/deiva_thirumagal.jpg"
+            image={deivaThirumagal}
             title="Deiva Thirumagal"
             year="2011"
             genre="Drama"
           />
 
           <MovieCard
-            image="/src/assets/mahaan.jpg"
+            image={mahaan}
             title="Mahaan"
             year="2022"
             genre="Action"
@@ -405,7 +438,6 @@ function App() {
       </footer>
 
     </div>
-
   );
 }
 
