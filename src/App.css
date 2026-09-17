@@ -1,0 +1,440 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: white;
+}
+
+
+/* ================= HEADER ================= */
+
+header {
+    height: 70px;
+
+    background: #000;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 40px;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+}
+
+.logo {
+    color: #e50914;
+
+    font-size: 23px;
+
+    font-weight: bold;
+
+    white-space: nowrap;
+}
+
+nav {
+    display: flex;
+
+    gap: 18px;
+
+    overflow-x: auto;
+}
+
+nav a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    white-space: nowrap;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #e50914;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    height: 550px;
+
+    background-image:
+        linear-gradient(
+            to right,
+            rgba(0,0,0,0.95),
+            rgba(0,0,0,0.2)
+        ),
+        url("/src/assets/leo.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    display: flex;
+
+    align-items: center;
+}
+
+.hero-content {
+    margin-left: 60px;
+
+    max-width: 500px;
+}
+
+.small-title {
+    color: #aaa;
+
+    letter-spacing: 4px;
+
+    font-size: 14px;
+}
+
+.hero-content h1 {
+    font-size: 60px;
+
+    color: #e50914;
+
+    margin-top: 10px;
+}
+
+.hero-content h2 {
+    font-size: 40px;
+
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 18px;
+
+    color: #ddd;
+
+    margin-bottom: 25px;
+
+    line-height: 1.5;
+}
+
+.hero-button {
+    display: inline-block;
+
+    background: #e50914;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 13px 25px;
+
+    border-radius: 5px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.hero-button:hover {
+    background: #b20710;
+}
+
+
+/* ================= ACTORS ================= */
+
+.actors {
+    padding: 50px 40px;
+
+    background: #0d0d0d;
+}
+
+.actors h2 {
+    font-size: 28px;
+
+    margin-bottom: 25px;
+}
+
+.actor-container {
+    display: flex;
+
+    gap: 25px;
+
+    overflow-x: auto;
+
+    padding: 10px;
+}
+
+.actor-card {
+    min-width: 180px;
+
+    background: #1c1c1c;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    padding-bottom: 20px;
+
+    transition: 0.3s;
+}
+
+.actor-card:hover {
+    transform: scale(1.05);
+}
+
+.actor-card img {
+    width: 180px;
+
+    height: 220px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.actor-card h3 {
+    margin: 15px 5px;
+
+    font-size: 17px;
+}
+
+.actor-card a {
+    display: inline-block;
+
+    background: #e50914;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 8px 15px;
+
+    border-radius: 5px;
+
+    font-size: 13px;
+}
+
+
+/* ================= MOVIES ================= */
+
+.movies {
+    padding: 45px 40px;
+
+    background: #111;
+}
+
+.movies h2 {
+    font-size: 28px;
+
+    margin-bottom: 25px;
+}
+
+.movie-container {
+    display: flex;
+
+    gap: 20px;
+
+    overflow-x: auto;
+
+    padding: 10px;
+}
+
+.movie-card {
+    min-width: 200px;
+
+    background: #1c1c1c;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    padding-bottom: 15px;
+
+    transition: 0.3s;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+
+    background: #252525;
+}
+
+.movie-card img {
+    width: 200px;
+
+    height: 280px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.movie-info {
+    padding: 12px;
+}
+
+.movie-info h3 {
+    margin-bottom: 7px;
+}
+
+.movie-info p {
+    color: #999;
+
+    font-size: 14px;
+
+    margin-bottom: 12px;
+}
+
+.movie-info button {
+    background: #e50914;
+
+    color: white;
+
+    border: none;
+
+    padding: 9px 15px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+.movie-info button:hover {
+    background: #b20710;
+}
+
+
+/* ================= SCROLLBAR ================= */
+
+.movie-container::-webkit-scrollbar,
+.actor-container::-webkit-scrollbar,
+nav::-webkit-scrollbar {
+    height: 6px;
+}
+
+.movie-container::-webkit-scrollbar-thumb,
+.actor-container::-webkit-scrollbar-thumb,
+nav::-webkit-scrollbar-thumb {
+    background: #444;
+
+    border-radius: 10px;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #000;
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+footer h2 {
+    color: #e50914;
+
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: #777;
+
+    margin: 7px;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+    header {
+        height: 65px;
+
+        padding: 0 15px;
+    }
+
+    .logo {
+        font-size: 16px;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+    .hero {
+        height: 430px;
+    }
+
+    .hero-content {
+        margin-left: 25px;
+
+        margin-right: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 40px;
+    }
+
+    .hero-content h2 {
+        font-size: 30px;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+    }
+
+    .actors {
+        padding: 30px 20px;
+    }
+
+    .actor-card {
+        min-width: 150px;
+    }
+
+    .actor-card img {
+        width: 150px;
+
+        height: 190px;
+    }
+
+    .movies {
+        padding: 30px 20px;
+    }
+
+    .movies h2 {
+        font-size: 23px;
+    }
+
+    .movie-card {
+        min-width: 160px;
+    }
+
+    .movie-card img {
+        width: 160px;
+
+        height: 230px;
+    }
+}
