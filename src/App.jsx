@@ -34,7 +34,6 @@ import mahaan from "./assets/mahaan.jpg";
 import "./App.css";
 
 
-/* ================= ACTOR CARD ================= */
 
 function ActorCard({ image, name, movieSection }) {
   return (
@@ -53,7 +52,7 @@ function ActorCard({ image, name, movieSection }) {
 }
 
 
-/* ================= MOVIE CARD ================= */
+
 
 function MovieCard({ image, title, year, genre }) {
   return (
@@ -80,13 +79,12 @@ function MovieCard({ image, title, year, genre }) {
 }
 
 
-/* ================= MAIN APP ================= */
 
 function App() {
   return (
     <div>
 
-      {/* ================= HEADER ================= */}
+      
 
       <header>
 
@@ -117,7 +115,6 @@ function App() {
       </header>
 
 
-      {/* ================= HERO ================= */}
 
       <section className="hero" id="home">
 
@@ -152,7 +149,6 @@ function App() {
       </section>
 
 
-      {/* ================= ACTORS ================= */}
 
       <section className="actors" id="actors">
 
@@ -201,7 +197,6 @@ function App() {
       </section>
 
 
-      {/* ================= THALA AJITH ================= */}
 
       <section className="movies" id="thala">
 
@@ -235,7 +230,6 @@ function App() {
       </section>
 
 
-      {/* ================= THALAPATHY VIJAY ================= */}
 
       <section className="movies" id="thalapathy">
 
@@ -283,7 +277,6 @@ function App() {
       </section>
 
 
-      {/* ================= SURIYA ================= */}
 
       <section className="movies" id="suriya">
 
@@ -317,7 +310,6 @@ function App() {
       </section>
 
 
-      {/* ================= DHANUSH ================= */}
 
       <section className="movies" id="dhanush">
 
@@ -351,7 +343,6 @@ function App() {
       </section>
 
 
-      {/* ================= KARTHI ================= */}
 
       <section className="movies" id="karthi">
 
@@ -385,7 +376,6 @@ function App() {
       </section>
 
 
-      {/* ================= VIKRAM ================= */}
 
       <section className="movies" id="vikram">
 
@@ -419,7 +409,6 @@ function App() {
       </section>
 
 
-      {/* ================= FOOTER ================= */}
 
       <footer>
 
