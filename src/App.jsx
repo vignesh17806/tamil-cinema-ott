@@ -31,6 +31,8 @@ import anniyan from "./assets/anniyan.jpg";
 import deivaThirumagal from "./assets/deiva_thirumagal.jpg";
 import mahaan from "./assets/mahaan.jpg";
 
+import { useEffect, useState } from "react";
+
 import "./App.css";
 
 
@@ -52,6 +54,107 @@ function ActorCard({ image, name, movieSection }) {
 }
 
 
+const movieDetails = {
+  Mankatha: {
+    director: "Venkat Prabhu",
+    cast: ["Ajith Kumar", "Arjun Sarja", "Trisha Krishnan", "Andrea Jeremiah", "Vaibhav Reddy"],
+  },
+
+  Viswasam: {
+    director: "Siva",
+    cast: ["Ajith Kumar", "Nayanthara", "Jagapathi Babu", "Vivek", "Yogi Babu"],
+  },
+
+  Vidaamuyarchi: {
+    director: "Magizh Thirumeni",
+    cast: ["Ajith Kumar", "Trisha Krishnan", "Arjun Sarja", "Regina Cassandra", "Arav"],
+  },
+
+  Leo: {
+    director: "Lokesh Kanagaraj",
+    cast: ["Vijay", "Trisha", "Sanjay Dutt", "Arjun Sarja", "Gautham Vasudev Menon"],
+  },
+
+  Master: {
+    director: "Lokesh Kanagaraj",
+    cast: ["Vijay", "Vijay Sethupathi", "Malavika Mohanan", "Andrea Jeremiah", "Arjun Das"],
+  },
+
+  Beast: {
+    director: "Nelson Dilipkumar",
+    cast: ["Vijay", "Pooja Hegde", "Selvaraghavan", "Yogi Babu", "Shine Tom Chacko"],
+  },
+
+  Varisu: {
+    director: "Vamshi Paidipally",
+    cast: ["Vijay", "Rashmika Mandanna", "Shaam", "Prakash Raj", "Sarathkumar"],
+  },
+
+  Ghilli: {
+    director: "Dharani",
+    cast: ["Vijay", "Trisha", "Prakash Raj", "Ashish Vidyarthi", "Janaki Sabesh"],
+  },
+
+  "Soorarai Pottru": {
+    director: "Sudha Kongara",
+    cast: ["Suriya", "Aparna Balamurali", "Paresh Rawal", "Urvashi", "Mohan Babu"],
+  },
+
+  "Jai Bhim": {
+    director: "T. J. Gnanavel",
+    cast: ["Suriya", "Lijomol Jose", "Manikandan", "Rajisha Vijayan", "Prakash Raj"],
+  },
+
+  "24": {
+    director: "Vikram K. Kumar",
+    cast: ["Suriya", "Samantha Ruth Prabhu", "Nithya Menen", "Saranya Ponvannan", "Ajay"],
+  },
+
+  Asuran: {
+    director: "Vetrimaaran",
+    cast: ["Dhanush", "Manju Warrier", "Ken Karunas", "Teejay Arunasalam", "Pasupathi"],
+  },
+
+  VIP: {
+    director: "Velraj",
+    cast: ["Dhanush", "Amala Paul", "Samuthirakani", "Saranya Ponvannan", "Vivek"],
+  },
+
+  Raayan: {
+    director: "Dhanush",
+    cast: ["Dhanush", "S. J. Suryah", "Sundeep Kishan", "Kalidas Jayaram", "Dushara Vijayan"],
+  },
+
+  Kaithi: {
+    director: "Lokesh Kanagaraj",
+    cast: ["Karthi", "Narain", "Dheena", "George Maryan", "Arjun Das"],
+  },
+
+  Theeran: {
+    director: "H. Vinoth",
+    cast: ["Karthi", "Rakul Preet Singh", "Abhimanyu Singh", "Bose Venkat", "Manobala"],
+  },
+
+  "Ponniyin Selvan": {
+    director: "Mani Ratnam",
+    cast: ["Karthi", "Vikram", "Jayam Ravi", "Trisha", "Aishwarya Rai Bachchan"],
+  },
+
+  Anniyan: {
+    director: "S. Shankar",
+    cast: ["Vikram", "Sadha", "Vivek", "Prakash Raj", "Nedumudi Venu"],
+  },
+
+  "Deiva Thirumagal": {
+    director: "A. L. Vijay",
+    cast: ["Vikram", "Anushka Shetty", "Amala Paul", "Nassar", "Santhanam"],
+  },
+
+  Mahaan: {
+    director: "Karthik Subbaraj",
+    cast: ["Vikram", "Dhruv Vikram", "Bobby Simha", "Simran", "Vettai Muthukumar"],
+  },
+};
 
 
 function MovieCard({ image, title, year, genre }) {
@@ -68,8 +171,13 @@ function MovieCard({ image, title, year, genre }) {
           {year} • {genre}
         </p>
 
-        <button type="button">
-          ▶ Watch
+        <button
+        type="button"
+        onClick={() => {
+          window.location.hash = `movie/${encodeURIComponent(title)}`;
+       }}
+>
+        ▶ Watch
         </button>
 
       </div>
@@ -78,9 +186,224 @@ function MovieCard({ image, title, year, genre }) {
   );
 }
 
+function MovieDetails({ movie }) {
+  const details = movieDetails[movie.title];
 
+  return (
+    <section className="movie-details-page">
+
+      <button
+        className="back-button"
+        onClick={() => {
+          window.location.hash = "";
+        }}
+      >
+        ← Back to Movies
+      </button>
+
+      <div className="movie-details">
+
+        <div className="movie-details-poster">
+          <img src={movie.image} alt={movie.title} />
+        </div>
+
+        <div className="movie-details-info">
+
+          <h1>{movie.title}</h1>
+
+          <p className="movie-meta">
+            {movie.year} • {movie.genre}
+          </p>
+
+          <h3>Director</h3>
+          <p>{details?.director || "Director information"}</p>
+
+          <h3>Cast</h3>
+
+          <div className="cast-list">
+            {(details?.cast || []).map((actor, index) => (
+              <span key={index} className="cast-name">
+                {actor}
+              </span>
+            ))}
+          </div>
+
+          <div className="demo-watch">
+            <h3>🎬 Movie Preview</h3>
+            <p>
+              This is a demo movie details page.
+              Full movie playback is not included.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+  );
+}
 
 function App() {
+  const [selectedMovie, setSelectedMovie] = useState(null);
+
+  useEffect(() => {
+    const checkMovie = () => {
+      const hash = window.location.hash;
+
+      if (hash.startsWith("#movie/")) {
+        const title = decodeURIComponent(
+          hash.replace("#movie/", "")
+        );
+
+        setSelectedMovie(title);
+      } else {
+        setSelectedMovie(null);
+      }
+    };
+
+    checkMovie();
+
+    window.addEventListener("hashchange", checkMovie);
+
+    return () => {
+      window.removeEventListener("hashchange", checkMovie);
+    };
+  }, []);
+
+  const allMovies = [
+    {
+      title: "Mankatha",
+      year: "2011",
+      genre: "Action",
+      image: mankatha,
+    },
+    {
+      title: "Viswasam",
+      year: "2019",
+      genre: "Action",
+      image: viswasam,
+    },
+    {
+      title: "Vidaamuyarchi",
+      year: "2025",
+      genre: "Action",
+      image: vidaamuyarchi,
+    },
+    {
+      title: "Leo",
+      year: "2023",
+      genre: "Action",
+      image: leo,
+    },
+    {
+      title: "Master",
+      year: "2021",
+      genre: "Action",
+      image: master,
+    },
+    {
+      title: "Beast",
+      year: "2022",
+      genre: "Action",
+      image: beast,
+    },
+    {
+      title: "Varisu",
+      year: "2023",
+      genre: "Drama",
+      image: varisu,
+    },
+    {
+      title: "Ghilli",
+      year: "2004",
+      genre: "Action",
+      image: ghilli,
+    },
+    {
+      title: "Soorarai Pottru",
+      year: "2020",
+      genre: "Drama",
+      image: soorarai,
+    },
+    {
+      title: "Jai Bhim",
+      year: "2021",
+      genre: "Drama",
+      image: jai_bhim,
+    },
+    {
+      title: "24",
+      year: "2016",
+      genre: "Sci-Fi",
+      image: surya24,
+    },
+    {
+      title: "Asuran",
+      year: "2019",
+      genre: "Drama",
+      image: asuran,
+    },
+    {
+      title: "VIP",
+      year: "2014",
+      genre: "Comedy",
+      image: vip,
+    },
+    {
+      title: "Raayan",
+      year: "2024",
+      genre: "Action",
+      image: raayan,
+    },
+    {
+      title: "Kaithi",
+      year: "2019",
+      genre: "Action",
+      image: kaithi,
+    },
+    {
+      title: "Theeran",
+      year: "2017",
+      genre: "Action",
+      image: theeran,
+    },
+    {
+      title: "Ponniyin Selvan",
+      year: "2022",
+      genre: "Historical",
+      image: ponniyinSelvan,
+    },
+    {
+      title: "Anniyan",
+      year: "2005",
+      genre: "Action",
+      image: anniyan,
+    },
+    {
+      title: "Deiva Thirumagal",
+      year: "2011",
+      genre: "Drama",
+      image: deivaThirumagal,
+    },
+    {
+      title: "Mahaan",
+      year: "2022",
+      genre: "Action",
+      image: mahaan,
+    },
+  ];
+
+  if (selectedMovie) {
+    const movie = allMovies.find(
+      (item) => item.title === selectedMovie
+    );
+
+    if (movie) {
+      return <MovieDetails movie={movie} />;
+    }
+  }
+
   return (
     <div>
 
